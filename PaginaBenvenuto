@@ -15,7 +15,10 @@ def home():
 def user(name):
     # Quando si accede a "/qualsiasinome", restituisce un messaggio personalizzato con il parametro "name"
     return f"Ciao {name}"
-
+# Definisci una route che ridireziona alla home se si prova ad accedere all url "/admin"
+@app.route("/admin")
+def admin():
+    return redirect(url_for("home"))
 # Avvia l'applicazione se questo script è il file principale
 if __name__ == "__main__":
     app.run()
