@@ -1,0 +1,21 @@
+# Importa la classe Flask dal modulo Flask
+from flask import Flask
+
+# Crea un'applicazione Flask
+app = Flask(__name__)
+
+# Definisci una route per la homepage ("/")
+@app.route("/")
+def home():
+    # Quando si accede restituisce un messaggio di benvenuto
+    return "Hello! This is the main page <h1>Benvenuto<h1>"
+
+# Definisci una route che accetta un parametro "name" nella URL ("/<name>")
+@app.route("/<name>")
+def user(name):
+    # Quando si accede a "/qualsiasinome", restituisce un messaggio personalizzato con il parametro "name"
+    return f"Ciao {name}"
+
+# Avvia l'applicazione se questo script è il file principale
+if __name__ == "__main__":
+    app.run()
