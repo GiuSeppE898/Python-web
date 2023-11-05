@@ -1,3 +1,4 @@
+#pip install flask
 # Importa la classe Flask dal modulo Flask
 from flask import Flask
 
